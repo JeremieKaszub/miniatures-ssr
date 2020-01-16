@@ -1,0 +1,23 @@
+{
+  "home": {
+    "link": "Accueil"
+  },
+  "about": {
+    "link": "A propos"
+  },
+  "pricing": {
+    "link": "Tarifs"
+  },
+  "gallery": {
+    "link": "Gallerie"
+  },
+  "contact": {
+    "link": "Me contacter"
+  },
+  "blog": {
+    "link": "Blog"
+  },
+  "header": {
+    "subtitle": "Peinture sur figurines"
+  }
+}

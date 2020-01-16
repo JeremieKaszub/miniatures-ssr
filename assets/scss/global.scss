@@ -1,0 +1,10 @@
+@import './abstract.scss';
+
+@import '~normalize-scss/sass/normalize/import-now';
+
+body {
+  background: $administratum-grey;
+  font-family: 'Montserrat';
+  color: $mine-shaft;
+  margin: 0;
+}

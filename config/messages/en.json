@@ -1,0 +1,23 @@
+{
+  "home": {
+    "link": "Home"
+  },
+  "about": {
+    "link": "About"
+  },
+  "gallery": {
+    "link": "Gallery"
+  },
+  "pricing": {
+    "link": "Pricing"
+  },
+  "contact": {
+    "link": "Contact me"
+  },
+  "blog": {
+    "link": "Blog"
+  },
+  "header": {
+    "subtitle": "Miniatures painting"
+  }
+}
