@@ -1,0 +1,28 @@
+{
+  "home": {
+    "link": "Home"
+  },
+  "about": {
+    "link": "About"
+  },
+  "gallery": {
+    "link": "Gallery"
+  },
+  "pricing": {
+    "link": "Pricing"
+  },
+  "contact": {
+    "link": "Contact me"
+  },
+  "blog": {
+    "link": "Blog"
+  },
+  "header": {
+    "subtitle": "Miniatures painting"
+  },
+  "copyrights": {
+    "text": "All the photos on this site are the work of my painting job, and were taken by me. They are not free of rights. Please contact me if you wish to use them. The miniatures, names of the characters they represent, and all of the lore to which they are attached, are the exclusive property of their respective brands. This site's only vocation is to show an artistic expression resulting from my professional activity.",
+    "credits": "This site was created by Jérémie Kaszub. It is based on the NuxtJS framework, and its dynamic content is managed via the headless CMS Netlify.",
+    "date": "© Jérémie Kaszub - 2020"
+  }
+}
