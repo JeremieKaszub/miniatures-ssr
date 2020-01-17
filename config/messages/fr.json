@@ -19,5 +19,10 @@
   },
   "header": {
     "subtitle": "Peinture sur figurines"
+  },
+  "copyrights": {
+    "text": "Toutes les photos présentes sur ce site sont l'oeuvre de mon travail de peinture, et ont été prises par mes soins. Elles ne sont pas libres de droit. Merci de me contacter si vous souhaitez les utiliser. Les figurines, noms des personnages qu'elles représentent, et l'ensemble du lore auquel elles se rattachent, sont la propriété exclusive de leur marques respectives. Ce site n'a comme seule vocation que d'en montrer une expression artistique résultant de mon activité professionnelle.",
+    "credits": "Ce site a été réalisé par Jérémie Kaszub. Il est basé sur le framework NuxtJS, et son contenu dynamique est géré via le CMS headless Netlify.",
+    "date": "© Jérémie Kaszub - 2020"
   }
 }

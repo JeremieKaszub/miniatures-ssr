@@ -1,18 +1,26 @@
 <template>
-  <div class="menu">
+  <div :class="expanded ? 'expanded' : ''" class="menu">
+    <button @click="openMenu" class="menu__open">
+      <i class="menu__open__line"></i>
+      <i class="menu__open__line middle"></i>
+      <i class="menu__open__line"></i>
+    </button>
+    <button @click="closeMenu" class="menu__close">
+      <i class="menu__close__line"></i>
+    </button>
     <div class="menu__lang">
       <button
         :ref="lang"
         v-for="lang in $i18n.availableLocales"
         :key="lang"
-        class="menu__lang__button"
         @click="changeLocale(lang)"
         :disabled="lang === $i18n.locale ? true : false"
+        class="menu__lang__button"
       >
         {{ lang }}
       </button>
     </div>
-    <nav class="menu__nav" id="nav">
+    <nav id="nav" class="menu__nav">
       <div class="menu__nav__item">
         <transition name="fade">
           <span
@@ -22,6 +30,7 @@
           </span>
         </transition>
         <nuxt-link
+          @click.native="closeMenu"
           :class="$route.name === 'index' ? 'active' : ''"
           class="menu__nav__item__link"
           to="/"
@@ -45,6 +54,7 @@
           </span
         ></transition>
         <nuxt-link
+          @click.native="closeMenu"
           :class="$route.name === 'about' ? 'active' : ''"
           class="menu__nav__item__link"
           to="/about"
@@ -68,6 +78,7 @@
           </span
         ></transition>
         <nuxt-link
+          @click.native="closeMenu"
           :class="$route.name === 'pricing' ? 'active' : ''"
           class="menu__nav__item__link"
           to="/pricing"
@@ -91,6 +102,7 @@
           </span
         ></transition>
         <nuxt-link
+          @click.native="closeMenu"
           :class="$route.name === 'gallery' ? 'active' : ''"
           class="menu__nav__item__link"
           to="/gallery"
@@ -114,6 +126,7 @@
           </span
         ></transition>
         <nuxt-link
+          @click.native="closeMenu"
           :class="$route.name === 'contact' ? 'active' : ''"
           class="menu__nav__item__link"
           to="/contact"
@@ -137,6 +150,7 @@
           </span
         ></transition>
         <nuxt-link
+          @click.native="closeMenu"
           :class="$route.name === 'blog' ? 'active' : ''"
           class="menu__nav__item__link"
           to="/blog"
@@ -151,7 +165,9 @@
         ></transition>
       </div>
     </nav>
-    <div class="menu__separator"></div>
+    <div class="menu__separator">
+      <div class="menu__separator__content"></div>
+    </div>
     <div class="menu__social">
       <a class="menu__social__link">
         <em class="icomoon">facebook</em>
@@ -160,6 +176,17 @@
         <em class="icomoon">instagram</em>
       </a>
     </div>
+    <div class="menu__copyrights">
+      <p class="menu__copyrights__text">
+        {{ $t('copyrights.text') }}
+      </p>
+      <p class="menu__copyrights__credits">
+        {{ $t('copyrights.credits') }}
+      </p>
+      <p class="menu__copyrights__date">
+        {{ $t('copyrights.date') }}
+      </p>
+    </div>
   </div>
 </template>
 
@@ -167,13 +194,22 @@
 export default {
   name: 'Menu',
 
+  data() {
+    return {
+      expanded: false
+    }
+  },
+
   methods: {
     changeLocale(lang) {
       this.$i18n.locale = lang
+    },
+    openMenu() {
+      this.expanded = true
+    },
+    closeMenu() {
+      this.expanded = false
     }
-  },
-  mounted() {
-    console.log(this.$route)
   }
 }
 </script>
@@ -181,17 +217,103 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 .menu {
+  position: absolute;
+  left: 0;
+  right: 0;
+  transition: transform 0.32s;
+  transform: translateX(-100%);
   display: flex;
   flex-direction: column;
   align-items: center;
   background: $mine-shaft;
-  height: calc(100% - #{$gutter-size-small} * 2);
-  padding: $gutter-size-small;
+  height: calc(100% - #{$gutter-size-small});
+  padding: $gutter-size-small $gutter-size-small 0;
   font-family: 'Cormorant';
 
   @media (min-width: $sm) {
-    padding: $gutter-size-large;
-    height: calc(100% - #{$gutter-size-large} * 2);
+    position: relative;
+    transform: translateX(0);
+    padding: $gutter-size-large $gutter-size-large 0;
+    height: calc(100% - #{$gutter-size-large});
+  }
+
+  &.expanded {
+    transform: translateX(0);
+  }
+
+  &__open,
+  &__close {
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  &__open {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    right: -40px;
+    background: $mine-shaft;
+    border: none;
+    border-bottom-right-radius: 3px;
+    box-shadow: 0 2px 10px 0 rgba($mine-shaft, 0.75);
+    height: 40px;
+    width: 40px;
+
+    @media (min-width: $sm) {
+      display: none;
+    }
+
+    &__line {
+      position: relative;
+      height: 1px;
+      width: 20px;
+      margin: 2px 0;
+      background: $white;
+
+      &.middle {
+        width: 15px;
+      }
+    }
+  }
+
+  &__close {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 5px;
+    left: $gutter-size-large;
+    border: 0;
+    height: 40px;
+    width: 40px;
+    background: $mine-shaft;
+
+    @media (min-width: $sm) {
+      display: none;
+    }
+
+    &__line {
+      position: relative;
+      width: 20px;
+      height: 1px;
+      background: $white;
+
+      &:before {
+        position: absolute;
+        top: -5px;
+        left: 0;
+        border-top: 1px solid $white;
+        border-left: 1px solid $white;
+        transform: rotate(-45deg);
+        width: 10px;
+        height: 10px;
+        content: '';
+      }
+    }
   }
 
   &__lang {
@@ -219,6 +341,7 @@ export default {
     display: flex;
     flex-direction: column;
     margin-top: $gutter-size-large;
+    width: 100%;
 
     &__item {
       position: relative;
@@ -305,25 +428,55 @@ export default {
   }
 
   &__separator {
-    @include separator;
+    margin: $gutter-size-large 0;
 
-    margin: $gutter-size-large/2 0 $gutter-size-large;
-    border-color: $white;
-
-    &:before,
-    &:after {
+    &__content {
+      @include separator;
       border-color: $white;
+
+      &:before,
+      &:after {
+        border-color: $white;
+      }
     }
   }
 
   &__social {
     display: flex;
+    margin: $gutter-size-large 0;
 
     &__link {
       display: block;
       margin: 0 $gutter-size-large/2;
       color: $white;
       font-size: 32px;
+      cursor: pointer;
+    }
+  }
+
+  &__copyrights {
+    color: $white;
+    background: $black;
+    font-family: 'Montserrat';
+    font-weight: 300;
+    font-size: 0.6rem;
+    text-align: justify;
+    width: calc(100% + #{$gutter-size-small} * 2);
+    padding: $gutter-size-large 0;
+    margin-top: auto;
+
+    @media (min-width: $sm) {
+      width: calc(100% + #{$gutter-size-large} * 2);
+    }
+
+    &__text,
+    &__credits,
+    &__date {
+      padding: 0 $gutter-size-large;
+    }
+
+    &__date {
+      text-align: center;
     }
   }
 
