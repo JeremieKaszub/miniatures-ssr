@@ -1,6 +1,8 @@
 {
   "home": {
-    "link": "Accueil"
+    "link": "Accueil",
+    "title": "Service de peinture sur figurines de jeu ou d'exposition",
+    "text": "Que vous soyez à la recherche d'une escouade pour compléter votre armée favorite par manque de temps, que vous soyez incapables de peindre vous-même mais êtes intéressés par les wargames, ou que vous souhaitiez rajouter une pointe de fantaisie à votre intérieur, vous êtes au bon endroit. N'hésitez pas à parcourir ce site pour savoir quelle est ma manière de fonctionner, pour découvrir mes créations, ou pour consulter mes conseils de peinture. Bonne visite."
   },
   "about": {
     "link": "A propos"
@@ -22,7 +24,7 @@
   },
   "copyrights": {
     "text": "Toutes les photos présentes sur ce site sont l'oeuvre de mon travail de peinture, et ont été prises par mes soins. Elles ne sont pas libres de droit. Merci de me contacter si vous souhaitez les utiliser. Les figurines, noms des personnages qu'elles représentent, et l'ensemble du lore auquel elles se rattachent, sont la propriété exclusive de leur marques respectives. Ce site n'a comme seule vocation que d'en montrer une expression artistique résultant de mon activité professionnelle.",
-    "credits": "Ce site a été réalisé par Jérémie Kaszub. Il est basé sur le framework NuxtJS, et son contenu dynamique est géré via le CMS headless Netlify.",
+    "credits": "Ce site a été réalisé par Jérémie Kaszub.",
     "date": "© Jérémie Kaszub - 2020"
   }
 }
