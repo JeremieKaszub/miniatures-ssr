@@ -21,9 +21,16 @@
 
   &__aside {
     width: 100%;
+    z-index: 2;
 
     @media (min-width: $sm) {
       width: 320px;
+    }
+  }
+
+  &__main {
+    @media (min-width: $sm) {
+      width: calc(100% - 320px);
     }
   }
 }

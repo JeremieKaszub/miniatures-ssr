@@ -1,6 +1,8 @@
 {
   "home": {
-    "link": "Home"
+    "link": "Home",
+    "title": "Tabletop or display painting service",
+    "text": "Whether you are looking for a squad to complete your favorite army due to lack of time, you are unable to paint yourself but are interested in wargames, or you want to add a touch of fantasy in your place, you are in the right place."
   },
   "about": {
     "link": "About"
@@ -22,7 +24,7 @@
   },
   "copyrights": {
     "text": "All the photos on this site are the work of my painting job, and were taken by me. They are not free of rights. Please contact me if you wish to use them. The miniatures, names of the characters they represent, and all of the lore to which they are attached, are the exclusive property of their respective brands. This site's only vocation is to show an artistic expression resulting from my professional activity.",
-    "credits": "This site was created by Jérémie Kaszub. It is based on the NuxtJS framework, and its dynamic content is managed via the headless CMS Netlify.",
+    "credits": "This site was created by Jérémie Kaszub.",
     "date": "© Jérémie Kaszub - 2020"
   }
 }
