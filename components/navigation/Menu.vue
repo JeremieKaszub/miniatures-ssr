@@ -177,12 +177,6 @@
       </a>
     </div>
     <div class="menu__copyrights">
-      <p class="menu__copyrights__text">
-        {{ $t('copyrights.text') }}
-      </p>
-      <p class="menu__copyrights__credits">
-        {{ $t('copyrights.credits') }}
-      </p>
       <p class="menu__copyrights__date">
         {{ $t('copyrights.date') }}
       </p>
@@ -456,7 +450,6 @@ export default {
 
   &__copyrights {
     color: $white;
-    background: $black;
     font-family: 'Montserrat';
     font-weight: 300;
     font-size: 0.6rem;

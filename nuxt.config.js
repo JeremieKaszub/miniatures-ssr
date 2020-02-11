@@ -17,7 +17,7 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   generate: {
-    routes: function() {
+    routes() {
       const fs = require('fs')
       return fs.readdirSync('./assets/content/blog').map((file) => {
         return {
